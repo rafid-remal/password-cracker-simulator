@@ -38,13 +38,24 @@ pip install -r requirements.txt
 python3 app.py
 ```
 
+## WEB view
+
+- go to any browser
+
+```
+http://localhost:5000/
+```
+
+
 ## 🧠 How it works
+
 - Weak passwords are tested against known patterns
 - Dictionary attack uses common password lists
 - Brute-force simulates guessing combinations
 
 
 ## 📁 Project Structure
+
 - app.py → main program
 - strength_checker.py → password analysis
 - dictionary_attack.py → wordlist attack
