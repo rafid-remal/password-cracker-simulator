@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>🔐 Password Analyzer</h1>
+
+<form action="/check" method="post">
+    <input type="text" name="password" placeholder="Enter password" required>
+
+    <select name="mode">
+        <option value="dictionary">Dictionary Attack</option>
+        <option value="bruteforce">Brute Force</option>
+    </select>
+
+    <button type="submit">Analyze</button>
+</form>
+
+</body>
+</html>

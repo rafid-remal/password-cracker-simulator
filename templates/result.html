@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>🔍 Result for: {{ result.password }}</h2>
+
+<h3>Strength: {{ result.strength.level }}</h3>
+<p>Guesses needed: {{ result.strength.guesses }}</p>
+
+{% if result.attack %}
+<h3>Attack Result</h3>
+<p>Success: {{ result.attack.success }}</p>
+<p>Attempts: {{ result.attack.attempts }}</p>
+<p>Time: {{ result.attack.time }} sec</p>
+{% endif %}
+
+<canvas id="chart"></canvas>
+
+<script>
+const ctx = document.getElementById('chart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Strength Score', 'Attempts'],
+        datasets: [{
+            label: 'Analysis',
+            data: [{{ result.strength.score }}, {{ result.attack.attempts if result.attack else 0 }}]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
